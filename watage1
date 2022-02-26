@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title> メッセージボード </title>
+</head>
+
+<body>
+  <h2> {{title}} </h2>
+
+    <div>
+      <form method="post" action="/">
+        {{name}}<input type="text" name="idx">
+        {{message}}<input type="text" name="text">
+        <input type="submit">
+      </form>
+    </div>
+    
+
+    <hr>
+    <ul>
+      {% for item in data | reverse %}
+        <li> {{item[0]}}: ( {{item[1]}}: {{item[2]}}: {{item[3]}} ) </li>
+      {% endfor %}
+    </ul>
+  
+  </body>
+</html>
